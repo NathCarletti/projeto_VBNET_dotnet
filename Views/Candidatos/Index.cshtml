@@ -1,0 +1,100 @@
+@model IEnumerable<crudmysql.Models.Candidatos>
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cpf)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Valorp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Situacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Numurna)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ocupacao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ver)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Partido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VicePref)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Datanasc)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Valorp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Situacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Numurna)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ocupacao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ver)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Partido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VicePref)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Datanasc)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Idcandidatos">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Idcandidatos">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Idcandidatos">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>
